@@ -1,11 +1,6 @@
-<fieldset>
-  <legend>Make sure this is right</legend>
-  <%= render 'signatures/email', f: f, signature: signature %>
+<h1 class='page-title'>Make sure this is right</h1>
+<%= render 'signatures/email', f: f, signature: signature %>
 
-  <p>If your email address is wrong, just change it above.</p>
+<%= f.button 'Yes - this is my email address', :name => 'move', :value => 'next', :class => 'button', :tabindex => increment %>
 
-  <%= form_row :class => 'button_row' do %>
-    <%= f.button 'Back', :name => 'move', :value => 'back', :class => 'button backwards_action', :tabindex => increment %>
-    <%= f.button 'Yes - this is my email address', :name => 'move', :value => 'next', :class => 'button forward_action', :tabindex => increment %>
-  <% end %>
-</fieldset>
+<p>If your email address is wrong, just change it above.</p>
