@@ -1,8 +1,8 @@
 module FormHelper
   def form_row opts={}, &block
-    css_classes = ['row']
+    css_classes = ['form-group']
     css_classes.push opts[:class] if opts[:class]
-    css_classes.push 'invalid_row' if opts[:for] && opts[:for][0].errors[opts[:for][1]].any?
+    css_classes.push 'error' if opts[:for] && opts[:for][0].errors[opts[:for][1]].any?
     content_tag :div, capture(&block), :class => css_classes.join(' ')
   end
 
@@ -237,9 +237,9 @@ module FormHelper
 
   def error_messages_for_field(object, field_name, opts={})
     unless object.errors[field_name].empty?
-      return_string = "<div class=\"errors#{' server_only_validation' if opts[:server_only_validation]}\">"
+      return_string = "<span class=\"error-message#{' server_only_validation' if opts[:server_only_validation]}\">"
       return_string += object.errors[field_name].join " "
-      raw(return_string + '</div>')
+      raw(return_string + '</span>')
     end
   end
 end
