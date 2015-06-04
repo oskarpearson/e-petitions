@@ -29,6 +29,7 @@ gem 'dynamic_form'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'sass-rails', '~> 5.0'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'rspec-rails'
