@@ -16,9 +16,9 @@ class Signature < ActiveRecord::Base
   has_one :sponsor
 
   # = Validations =
-  include Staged::Validations::Email
   include Staged::Validations::SignerDetails
   include Staged::Validations::MultipleSigners
+  include Validations::Email
 
   validates_inclusion_of :state, in: STATES
   validates :constituency_id, length: { maximum: 255 }

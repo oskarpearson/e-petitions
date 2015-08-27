@@ -1,6 +1,7 @@
 class Feedback
   include ActiveModel::Validations
   include ActiveModel::Conversion
+  include Validations::Email
 
   validates_presence_of :comment
   validates_format_of :email, with: EMAIL_REGEX, allow_blank: true

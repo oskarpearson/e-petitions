@@ -4,7 +4,7 @@ module Staged
       include Staged::PetitionCreator::HasCreatorSignature
 
       class CreatorSignature < Staged::Base::CreatorSignature
-        include Staged::Validations::Email
+        include ::Validations::Email
       end
     end
   end
